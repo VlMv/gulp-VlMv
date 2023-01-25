@@ -1,0 +1,110 @@
+.test {
+   padding: 2rem;
+   color: var(--clr-dark);
+   font-family: Roboto, sans-serif;
+
+   &__title {
+      margin-bottom: 1.5rem;
+      font-size: 3rem;
+   }
+
+   &__font {
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+   }
+
+   &__font-2 {
+      font-weight: 700;
+      font-style: italic;
+   }
+
+   &__font-3 {
+      font-weight: 300;
+   }
+}
+
+.font-list {
+   &__item {
+      margin-bottom: 0.25rem;
+   }
+}
+
+.img-wrap {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   gap: 2rem;
+   font-size: 1.1rem;
+
+   p {
+      margin-bottom: 0.8rem;
+      text-align: center;
+   }
+}
+
+.img-item {
+   min-height: 500px;
+
+   &__content {
+      display: block;
+      margin-inline: auto;
+   }
+
+   &__bg {
+      height: 500px;
+      background-image: url(@img/background/bg-test.png);
+      margin-inline: auto;
+   }
+
+   &__bg1 {
+      height: 500px;
+      background-image: url(@img/background/bg-test1.png);
+      margin-inline: auto;
+   }
+
+   &__bg12 {
+      height: 500px;
+      background-image: url(@img/background/bg-test12.png);
+      margin-inline: auto;
+   }
+
+   &__bg13 {
+      height: 500px;
+      background-image: url(@img/background/bg-test13.png);
+      margin-inline: auto;
+   }
+
+   &__svg {
+      justify-self: center;
+      width: 100px;
+      height: 100px;
+      background: var(--svg-bg);
+   }
+
+   &__svg_inst {
+      --svg-bg: url(@img/icons/icons.svg#instagram-icon);
+   }
+
+   &__svg_link {
+      --svg-bg: url(@img/icons/icons.svg#linkedin-icon);
+   }
+
+   &__svg_whats {
+      --svg-bg: url(@img/icons/icons.svg#whatsapp-icon);
+   }
+}
+
+.bg-center {
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+
+.svg-wrap {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 0.5rem;
+
+   p {
+      grid-column: 3 span;
+   }
+}
