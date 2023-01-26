@@ -7,9 +7,9 @@ VIMv
 
 **Установка модулей:** npm i
 
-**Запуск в режиме разработки:** npm run dev
-**Запуск релизной сборки:** npm run build
-**Создание архива релизной сборки:** npm run zip
+**Запуск в режиме разработки:** npm run dev</br>
+**Запуск релизной сборки:** npm run build</br>
+**Создание архива релизной сборки:** npm run zip</br>
 
 ---
 ## Состав сборки
@@ -28,15 +28,17 @@ VIMv
 
 Требуется расширение **Path autocomplete** для VS Code для оптимизации указания путей до изображения. 
 
-Настройка **Path autocomplete** в JSON settings:
+Настройка **Path autocomplete** в JSON settings:</br>
+```JSON
    "path-autocomplete.pathMappings": {
       "@img": "${folder}/src/img",
       "@scss": "${folder}/src/scss",
       "@js": "${folder}/src/js",
       }
+```
 
-Расширенение в сочетании с gulp-replace позволяет унифицировать пути в коде:
-   src="@img/content-test.png" и background-image: url(@img/background/bg-test.png); в источнике преобразуется в src="img/content-test.png" и background-image: url(../img/background/bg-test.png); в сборке.
+Расширенение в сочетании с gulp-replace позволяет унифицировать пути в коде:</br>
+   `src="@img/content-test.png"` и `background-image: url(@img/background/bg-test.png);` в источнике преобразуется в `src="img/content-test.png"` и `background-image: url(../img/background/bg-test.png);` в сборке.
 
 ---
 ### Fonts
@@ -46,7 +48,7 @@ VIMv
 
 ### HTML
 * Сборка html файла из html-модулей.
-* Оборачивание тега <img> в <picture>. Подстановка в <picture> изображений WEBP и "х2 ретины" с пропиской суффиксов. Если требуются "media выражения" для замены изображения на разных расширениях, придется прописывать руками <picture> в исходном html коде (нет готовых решений для автоматизации "media выражений" + "ретина").
+* Оборачивание тега `<img>` в `<picture>`. Подстановка в `<picture>` изображений WEBP и "х2 ретины" с пропиской суффиксов. Если требуются "media выражения" для замены изображения на разных расширениях, придется прописывать руками `<picture>` в исходном html коде (нет готовых решений для автоматизации "media выражений" + "ретина").
 * Добавление версий css и js файлов для build версии.
 
 ### IMG
@@ -59,11 +61,13 @@ VIMv
 * Оптимизация изображений.
 * Создание фавикон в форматах .ico 32x32, .png 192x192, .png 512x512, .png 180x180 (для apple устройств) с подстановкой суффиксов в build версии. Выгрузка в dist .webmanifest и favicon.svg. 
 
-  Подключение фавикон в html: 
+  Подключение фавикон в html:</br>
+   ```HTML 
    <link rel="icon" href="favicon-32.ico">
    <link rel="icon" href="img/favicon/favicon.svg" type="image/svg+xml">
    <link rel="apple-touch-icon" href="img/favicon/favicon-apple-180.png">
    <link rel="manifest" href="img/favicon/manifest.webmanifest">
+   ```
 
 ### SVG
 * Создание svg-спрайта.
@@ -82,9 +86,10 @@ VIMv
 ### Server
 * Запуск live сервера
 
-Для просмотра сайта с смартфона (при подключении компьютера и смартфона к одной и той же сети): **http:// IPv4-адрес канала :номер порта**.
-  IPv4-адрес канала - в свойствах сети.
-  Номер порта прописан в таске.
+Для просмотра сайта с смартфона (при подключении компьютера и смартфона к одной и той же сети):</br>
+**http:// IPv4-адрес канала :номер порта**.</br>
+  IPv4-адрес канала - в свойствах сети.</br>
+  Номер порта прописан в таске.</br>
   Пример: http://111.222.0.333:3000.
 
 В Брандмауэре Windows - Разрешить работу с приложениями через брандмауэр - Node.js добавить галочку на "частную" сеть.
@@ -97,7 +102,8 @@ VIMv
 
 Требуется расширение **StyleLint** для VS code.
 
-Настройка **StyleLint** в JSON settings:
+Настройка **StyleLint** в JSON settings:</br>
+   ```JSON
    "editor.codeActionsOnSave": {
       "source.fixAll.stylelint": true
    },
@@ -121,8 +127,9 @@ VIMv
    ],
    "stylelint.config": null,
    "editor.formatOnSave": true,
+   ```
 
-Коррекция и сортировка свойств происходит автоматически при сохранении scss файлов источника. Ручное исправление командой: npx stylelint "**/*.{css,scss}" --fix
+Коррекция и сортировка свойств происходит автоматически при сохранении scss файлов источника.</br>Ручное исправление командой: npx stylelint "**/*.{css,scss}" --fix
 
 
 
