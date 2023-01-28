@@ -53,7 +53,7 @@ export const img = () => {
       // create x1 image out of x2-retina image
       .pipe(sharpResponsive({
          formats: [
-            { width: (metadata) => metadata.width * 0.5 } // divides the original image width by 2
+            { width: (metadata) => (Math.round(metadata.width * 0.5)) } // divides the original image width by 2
          ]
       }))
       .pipe(
