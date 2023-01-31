@@ -1,4 +1,4 @@
-html * {
+html :where(*) {
    box-sizing: border-box;
    margin: 0;
 }
