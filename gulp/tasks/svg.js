@@ -14,6 +14,7 @@ export const spriteSvg = () => {
          mode: {
             stack: {
                sprite: `../icons/icons.svg`,
+               rootviewbox: false
                // example: true // create html page with icons example
             }
          },
