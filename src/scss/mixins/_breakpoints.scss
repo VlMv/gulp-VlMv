@@ -1,16 +1,16 @@
-@mixin 1440px {
+@mixin media-1440 {
    @media (min-width: 1440px) {
       @content;
    }
 }
 
-@mixin 1024px {
+@mixin media-1024 {
    @media (min-width: 1024px) {
       @content;
    }
 }
 
-@mixin 768px {
+@mixin media-768 {
    @media (min-width: 768px) {
       @content;
    }
