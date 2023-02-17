@@ -22,7 +22,7 @@ export const fonts = () => {
 }
 
 export const fontScss = () => {
-   let fontsFile = `${app.path.srcFldr}/scss/fonts.scss`
+   let fontsFile = `${app.path.srcFldr}/scss/_fonts.scss`
    // check font files exist
    fs.readdir(app.path.build.fonts, function (err, fontsFiles) {
       if (fontsFiles) {
