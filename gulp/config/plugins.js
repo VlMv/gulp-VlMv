@@ -4,6 +4,7 @@ import notify from 'gulp-notify'; // screen notifications
 import browsersync from 'browser-sync'; // local server
 import newer from 'gulp-newer';
 import ifPlugin from 'gulp-if';
+import sourcemaps from 'gulp-sourcemaps';
 
 // common plagins
 export const plugins = {
@@ -13,4 +14,5 @@ export const plugins = {
    browsersync: browsersync,
    newer: newer,
    if: ifPlugin,
+   sourcemaps: sourcemaps
 }
