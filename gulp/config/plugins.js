@@ -4,7 +4,7 @@ import notify from 'gulp-notify'; // screen notifications
 import browsersync from 'browser-sync'; // local server
 import newer from 'gulp-newer';
 import ifPlugin from 'gulp-if';
-import sourcemaps from 'gulp-sourcemaps';
+import sourcemaps from 'gulp-sourcemaps'; // shows original scss/js files source in a browser devtools
 
 // common plagins
 export const plugins = {
