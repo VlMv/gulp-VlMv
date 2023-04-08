@@ -10,7 +10,13 @@ import groupMediaQueries from 'gulp-group-css-media-queries';
 const sass = gulpSass(dartSass);
 
 export const scss = () => {
-   return app.gulp.src(app.path.src.scss, { sourcemap: app.devSet })
+   return app.gulp.src(app.path.src.scss)
+
+      .pipe(
+         app.plugins.if(
+            app.devSet,
+            app.plugins.sourcemaps.init())
+      )
 
       .pipe(sass({
          outputStyle: 'expanded'
@@ -18,6 +24,12 @@ export const scss = () => {
 
       .pipe(app.plugins.replace(/@img\//g, '../img/'))
 
+      .pipe(
+         app.plugins.if(
+            app.devSet,
+            app.plugins.sourcemaps.write())
+      )
+   
       .pipe(
          app.plugins.if(
             app.buildSet,
