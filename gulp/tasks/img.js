@@ -93,10 +93,15 @@ export const favicon = () => {
             app.buildSet,
             app.gulp.src(app.path.src.favicon))
       )
-      .pipe(svg2png({
-         width: 512,
-         height: 512
-      }))
+      .pipe(
+         app.plugins.if(
+            app.buildSet,
+            svg2png({
+               width: 512,
+               height: 512
+            })
+         )
+      )
       .pipe(
          app.plugins.if(
             app.buildSet,
@@ -107,9 +112,14 @@ export const favicon = () => {
                optimizationLevel: 3 // 0 - 7
             }))
       )
-      .pipe(rename({
-         suffix: "-512"
-      }))
+      .pipe(
+         app.plugins.if(
+            app.buildSet,
+            rename({
+               suffix: "-512"
+            })
+         )
+      )
       .pipe(app.gulp.dest(`${app.path.buildFldr}/img/favicon/`))
       .pipe(app.plugins.newer(`${app.path.buildFldr}/img/favicon/`))
 
@@ -119,10 +129,15 @@ export const favicon = () => {
             app.buildSet,
             app.gulp.src(app.path.src.favicon))
       )
-      .pipe(svg2png({
-         width: 180,
-         height: 180
-      }))
+      .pipe(
+         app.plugins.if(
+            app.buildSet,
+            svg2png({
+               width: 180,
+               height: 180
+            })
+         )
+      )
       .pipe(
          app.plugins.if(
             app.buildSet,
@@ -133,9 +148,14 @@ export const favicon = () => {
                optimizationLevel: 3 // 0 - 7
             }))
       )
-      .pipe(rename({
-         suffix: "-apple-180"
-      }))
+      .pipe(
+         app.plugins.if(
+            app.buildSet,
+            rename({
+               suffix: "-apple-180"
+            })
+         )
+      )
       .pipe(app.gulp.dest(`${app.path.buildFldr}/img/favicon/`))
       .pipe(app.plugins.newer(`${app.path.buildFldr}/img/favicon/`))
 
@@ -145,10 +165,15 @@ export const favicon = () => {
             app.buildSet,
             app.gulp.src(app.path.src.favicon))
       )
-      .pipe(svg2png({
-         width: 192,
-         height: 192
-      }))
+      .pipe(
+         app.plugins.if(
+            app.buildSet,
+            svg2png({
+               width: 192,
+               height: 192
+            })
+         )
+      )
       .pipe(
          app.plugins.if(
             app.buildSet,
@@ -159,9 +184,14 @@ export const favicon = () => {
                optimizationLevel: 3 // 0 - 7
             }))
       )
-      .pipe(rename({
-         suffix: "-192"
-      }))
+      .pipe(
+         app.plugins.if(
+            app.buildSet,
+            rename({
+               suffix: "-192"
+            })
+         )
+      )
       .pipe(app.gulp.dest(`${app.path.buildFldr}/img/favicon/`))
       .pipe(app.plugins.newer(`${app.path.buildFldr}/img/favicon/`))
 
@@ -171,12 +201,27 @@ export const favicon = () => {
             app.buildSet,
             app.gulp.src(app.path.src.favicon))
       )
-      .pipe(svg2png({
-         width: 32,
-         height: 32
-      }))
-      .pipe(ico('favicon-32.ico'))
-      .pipe(app.gulp.dest(`${app.path.buildFldr}/`))
+      .pipe(
+         app.plugins.if(
+            app.buildSet,
+            svg2png({
+               width: 32,
+               height: 32
+            })
+         )
+      )
+      .pipe(
+         app.plugins.if(
+            app.buildSet,
+            ico('favicon-32.ico')
+         )
+      )
+      .pipe(
+         app.plugins.if(
+            app.buildSet,
+            app.gulp.dest(`${app.path.buildFldr}/`)
+         )
+      )
 
       .pipe(app.plugins.browsersync.stream());
 }
